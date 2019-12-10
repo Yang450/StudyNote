@@ -1,0 +1,42 @@
+四个概念：本地代码  待提交列表  本地仓库  远程仓库
+
+1.创建本地目录，cd本地目录，git init（指定本地目录为中央仓库）
+2.在本地目录中创建文件，git add 文件名（将文件添加到待提交列表中）
+3.git status：查看本地代码状态
+4.git commit：将待提交列表中的文件提交到仓库中
+  git commit -m "备注"
+5.git log：查看版本库内容
+  5.1 git log  --pretty=oneline：查看版本简要（HEAD表示当前版本，HEAD^表示上个版本，HEAD^3表示上第3个版本）
+6.git reset --hard 版本号（版本号hash值或HEAD^...）:版本制定
+7.git reflog：查看历史命令
+8.git restore <file>：在add之前撤销对文件的修改
+9.git reset head 文件名/git restore --staged <file>：add后commit前，撤销添加待提交清单文件。
+  然后使用checkout --文件名，撤销对文件的修改
+10.git rm 文件名：删除已提交的文件（已提交到库了，没用了）。
+11.git remote add origin https://github.com/Yang450/GIT.git
+   git pull --rebase origin master 更新
+   git push origin master 上传/推送
+12.git clone https://github.com/Yang450/GIT.git(先cd到要下载到的文件夹)
+13.git branch name : 创建分支
+   git checkout name ：切换分支
+   git branch ：查看分支
+   git merge name ：合并分支
+   git branch -d name : 删除分支
+   git branch -D name : 强制删除分支
+   git checkout -b name : 创建并切换到分支
+14.git fast forward模式下看不到合并信息
+   git merge -no-ff-m "msg" name : 禁用fast forward模式
+15.git stash 临时存储工作区   
+   git stash list 查看临时存储工作区
+   git stash apply 恢复临时工作区
+   git stash drop 删除临时工作区
+16.git remote 查看远程仓库信息
+   git remove -v 查看远程仓库详细信息
+   git push origin name 创建远程仓库名字
+   git checkout -b 创建远程分支并且切换到远程分支
+   git push origin dev 推送分支（先切换到本地分支）
+17.合并到master：git checkout master
+                 git pull origin master
+				 git merge dev
+				 git push origin master
+   
